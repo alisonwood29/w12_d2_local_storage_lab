@@ -33,11 +33,17 @@ var handleButtonClick = function () {
 }
 
 var save = function (newItem) {
-  // this function needs to:
-  // - get the data back from local storage and parse to an array
+
+// - get the data back from local storage and parse to an array
+  jsonToDoList = localStorage.getItem('todolist');
+  todolist = JSON.parse(jsonToDoList) || [];
+  todolist.push(newItem);
+  console.log(todolist);
   // - add the newItem to the array
   // - stringify the updated array
+  newJsonToDoList = JSON.stringify(todolist);
   // - save it back to localstoage
+  localStorage.setItem('todolist', newJsonToDoList);
 }
 
 window.addEventListener('load', init);
