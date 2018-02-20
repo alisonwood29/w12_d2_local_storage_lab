@@ -15,7 +15,10 @@ var addItem = function (item) {
   var ul = document.querySelector('#todo-list');
   // this function needs to:
   // - create an li element containing the string 'item'
+  const listItem = document.createElement('li');
+  listItem.innerText = item;
   // - append the li to the "todo-list" ul
+  ul.appendChild(listItem);
 }
 
 var handleButtonClick = function () {
