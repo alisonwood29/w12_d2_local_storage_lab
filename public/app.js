@@ -21,8 +21,12 @@ var addItem = function (item) {
 var handleButtonClick = function () {
   // this function needs to:
   // - get hold of the input box's value
+  const input = document.querySelector('#new-item').value;
+  console.log(input);
   // - append it to the "todo-list" ul by invoking addItem()
+  addItem(input);
   // - add it to local storage by invoking save()
+  save(input);
 }
 
 var save = function (newItem) {
